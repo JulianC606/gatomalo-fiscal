@@ -16,7 +16,7 @@ class Product():
         return modf(amount)[1]
 
     def __cents(self, amount):
-        return floor(modf(amount)[0]*100)
+        return round(modf(amount)[0]*100)
 
     def __str__(self):
         return "%s%08d%02d%05d%03d%s" % (self.tax, self.dollars, self.cents, self.quantity, 0, self.description)

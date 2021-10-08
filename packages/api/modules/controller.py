@@ -22,6 +22,7 @@ def print_invoice():
 @requires_auth
 def print_credit_note():
     json_req = request.json
+    logging.debug(json_req)
     string = parse_credit_note(json_req['credit_note'])
     printer.write_string_to_printer(string)
     return dumps({"printed_credit_note": string})
